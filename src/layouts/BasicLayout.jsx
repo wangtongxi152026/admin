@@ -8,7 +8,6 @@ import React, { useEffect } from 'react';
 import { Link } from 'umi';
 import { connect } from 'dva';
 import { Icon, Result, Button } from 'antd';
-import { formatMessage } from 'umi-plugin-react/locale';
 import Authorized from '@/utils/Authorized';
 import RightContent from '@/components/GlobalHeader/RightContent';
 import { isAntDesignPro, getAuthorityFromRouter } from '@/utils/utils';
@@ -25,10 +24,10 @@ const noMatch = (
     }
   />
 );
-
 /**
  * use Authorized check all menu item  侧边栏结构
  */
+
 const menuDataRender = menuList =>
   menuList.map(item => {
     const localItem = { ...item, children: item.children ? menuDataRender(item.children) : [] };
@@ -108,7 +107,7 @@ const BasicLayout = props => {
         type: 'user/fetchCurrent',
       });
     }
-  }, []);
+  }, [dispatch]);
   /**
    * init variables
    */
@@ -145,10 +144,7 @@ const BasicLayout = props => {
       breadcrumbRender={(routers = []) => [
         {
           path: '/',
-          breadcrumbName: formatMessage({
-            id: 'menu.home',
-            defaultMessage: 'Home',
-          }),
+          breadcrumbName: '首页',
         },
         ...routers,
       ]}
@@ -157,12 +153,11 @@ const BasicLayout = props => {
         return first ? (
           <Link to={paths.join('/')}>{route.breadcrumbName}</Link>
         ) : (
-            <span>{route.breadcrumbName}</span>
-          );
+          <span>{route.breadcrumbName}</span>
+        );
       }}
       footerRender={footerRender}
       menuDataRender={menuDataRender}
-      formatMessage={formatMessage}
       rightContentRender={() => <RightContent />}
       {...props}
       {...settings}

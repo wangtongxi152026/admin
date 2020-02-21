@@ -34,6 +34,19 @@ export async function getArticleDetail(params) {
   });
 }
 
+<<<<<<< HEAD
+=======
+
+export async function getArticleComment(params) {
+  return request('/api/getArticleDetail', {
+    method: 'POST',
+    data: params,
+  });
+}
+
+
+
+>>>>>>> 优化评论管理
 // 管理一级评论
 export async function changeComment(params) {
   return request('/api/changeComment', {

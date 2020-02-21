@@ -29,8 +29,6 @@ const { Search } = Input;
 const List = props => {
   const { dispatch, articleDetail, articleList, total, loading } = props;
 
-  console.log(articleList, "articleList");
-
   const [state, setState] = useState({
     changeType: true,
     state: 1, // 文章发布状态 => 0 草稿，1 已发布
@@ -38,7 +36,6 @@ const List = props => {
     pageNum: 1,
     pageSize: 10,
     article_id: "",
-
     keyword: "",
 
     title: "",
@@ -171,7 +168,7 @@ const List = props => {
             ...state,
             changeType: false,
             title: "",
-            author: "biaochenxuying",
+            author: "wangtongxi",
             keyword: "",
             content: "",
             desc: "",
@@ -469,12 +466,10 @@ const List = props => {
     });
   };
   const showCommentModal = record => {
-    console.log("record._id:", record._id);
     if (!record._id) {
       return;
     }
     setState({ ...state, article_id: record._id });
-
     getArticleDetail(setCommentsVisible(true));
   };
 
@@ -566,7 +561,7 @@ const List = props => {
       <CommentsComponent
         commentsVisible={commentsVisible}
         handleCommentsCancel={setCommentsVisible}
-        getArticleDetail={getArticleDetail}
+        article_id={state.article_id}
       />
 
       {/* <ArticleComponent

@@ -1,6 +1,9 @@
 import React from 'react';
 import { PageHeaderWrapper } from '@ant-design/pro-layout';
+<<<<<<< HEAD
 import { FormattedMessage } from 'umi-plugin-react/locale';
+=======
+>>>>>>> 优化评论管理
 import { Card, Typography, Alert } from 'antd';
 import styles from './Welcome.less';
 
@@ -27,10 +30,14 @@ export default () => (
       />
       <Typography.Text strong>
         <a target="_blank" rel="noopener noreferrer" href="https://pro.ant.design/docs/block">
+<<<<<<< HEAD
           <FormattedMessage
             id="app.welcome.link.block-list"
             defaultMessage="基于 block 开发，快速构建标准页面"
           />
+=======
+          基于 block 开发，快速构建标准页面
+>>>>>>> 优化评论管理
         </a>
       </Typography.Text>
       <CodePreview> npm run ui</CodePreview>
@@ -45,7 +52,11 @@ export default () => (
           rel="noopener noreferrer"
           href="https://pro.ant.design/docs/available-script#npm-run-fetchblocks"
         >
+<<<<<<< HEAD
           <FormattedMessage id="app.welcome.link.fetch-blocks" defaultMessage="获取全部区块" />
+=======
+          获取全部区块
+>>>>>>> 优化评论管理
         </a>
       </Typography.Text>
       <CodePreview> npm run fetch:blocks</CodePreview>

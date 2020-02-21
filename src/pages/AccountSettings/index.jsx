@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+<<<<<<< HEAD
 import { FormattedMessage } from 'umi-plugin-react/locale';
+=======
+>>>>>>> 优化评论管理
 import { GridContent } from '@ant-design/pro-layout';
 import { Menu } from 'antd';
 import { connect } from 'dva';
@@ -17,6 +20,7 @@ class AccountSettings extends Component {
   constructor(props) {
     super(props);
     const menuMap = {
+<<<<<<< HEAD
       base: <FormattedMessage id="accountsettings.menuMap.basic" defaultMessage="Basic Settings" />,
       security: (
         <FormattedMessage
@@ -33,6 +37,12 @@ class AccountSettings extends Component {
           defaultMessage="New Message Notification"
         />
       ),
+=======
+      base: '基本设置',
+      security: '安全设置',
+      binding: '账号绑定',
+      notification: '新消息通知',
+>>>>>>> 优化评论管理
     };
     this.state = {
       mode: 'inline',
